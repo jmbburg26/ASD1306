@@ -15,6 +15,7 @@ var storeData = function (key){
         userData.subject = $('#subject').val();
         userData.datedue = $('#datedue').val();
         userData.notes = $('#notes').val();
+        userData._id = $('#_id').val();
 
     localStorage.setItem(key, JSON.stringify(userData));
     alert("Homework Added!");
@@ -58,7 +59,7 @@ var displayData = function(){
 $('#view').on('click', function(){
     $("#savedList").listview("refresh");
 });
-
+/*
 //Function to add json data 
 $('#loadjson').on('click', function(){
     if(localStorage.length === 0){
@@ -77,7 +78,7 @@ $('#loadjson').on('click', function(){
         alert("Data has been added");
     }
 });
-
+*/
 //Function to edit assignment
 var editAssignment = function(){
         var value = localStorage.getItem(this.key);
