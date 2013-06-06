@@ -40,7 +40,8 @@ var displayData = function(){
             var item = JSON.parse(localStorage.getItem(key));
             console.log(item);
             var makeSubList = $("<li></li>");
-            var makeSubLi = $( "<h3>"+item.datedue+"</h3>"+
+            var makeSubLi = $( "<h3>" + "Assignment "+item._id+"</h3>"+
+                "<p>"+item.fname+"</p>" +
                 "<p>"+item.fname+"</p>" +
                 "<p>"+item.lname+"</p>"+
                 "<p>"+item.email+"</p>" +
@@ -108,7 +109,7 @@ var editAssignment = function(){
 
 
 //Clear data from local storage function
-$('#clear').on('click', function(){
+$('#deleteAll').on('click', function(){
   localStorage.clear();
   var confirmDelete = confirm("Are you sure you want to delete the assignment?");
     if(confirmDelete){
