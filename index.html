@@ -1,0 +1,132 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<meta charset="utf-8" />
+		<meta keywords="homework, assignment, tracker" />
+		<meta name="desrciption" content="The first web app of John Brandenburg" />
+		<meta name="robots" content="index, follow" />
+		<meta name="viewport" content="width=device-width initial-scale=1.0" />
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="MobileOptimized" content="320" />
+		<meta http-equiv="cleartype" content="on">
+		<title>Homework Tracker</title>
+
+		<!-- My stylesheets -->
+		<link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css" />
+		
+		<!-- Script -->
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/jquery.mobile-1.3.1.min.js"></script>
+		<script src="js/jquery.validate.min.js"></script>
+	</head> 
+	<body> 
+
+		<!--Home Page-->
+		<div id="home" data-role="page">
+			<section data-role="header" data-position="fixed">
+					<h1>Home</h1>
+			</section>	
+
+			<section>
+				<p>Please add an assignment or view saved assignments.</p>
+			</section>
+
+			<section>
+				<a href="#add" data-role="button" data-icon="plus" data-iconpos="right">Add New Assignment</a>
+				<a href="#view" data-role="button" data-icon="info" data-iconpos="right">View Assignments</a>
+			</section>
+			<div data-role="footer" data-position="fixed" data-id="home" data-theme="b">
+					<div data-role="navbar">
+						<ul>
+							<li><a href="#add" data-icon="plus">Add</a></li>
+							<li><a href="#view" data-icon="info">View</a></li>
+						</ul>
+					</div>	
+				</div>
+		</div>
+
+		<!--Add Item Page-->
+		<div id="add" data-role="page" data-add-back-btn="true">
+			<section data-role="header" data-position="fixed">
+					<h1>Add Assignment</h1>
+			</section>
+			<section>
+				<form action="" id="additemform">
+					<div>
+						<p>*Indicates a required field.</p>
+					</div>
+					
+					<div data-role="fieldcontain">
+						<label for "fname">*First Name:</label>
+						<input type="text" name="fname" id="fname" class="required" data-clear-btn="true" placeholder="Type first name here"/>
+					</div>
+					
+					<div data-role="fieldcontain">
+						<label for "lname" >*Last Name:</label>
+						<input type="text" name="lname" id="lname" class="required" data-clear-btn="true" placeholder="Type last name here"/>
+					</div>
+					
+					<div data-role="fieldcontain">
+						<label for "email">*Email:</label>
+						<input type="email" name="email" id="email" class="required email" data-clear-btn="true" placeholder="likethis@gmail.com"/>
+					</div>
+					
+					<div data-role="fieldcontain">
+						<label for "subject">*Subject:</label>
+						<input type="text" name="subject" id="subject" class="required" data-clear-btn="true" placeholder="ASD"/>
+					</div>
+					
+					<div data-role="fieldcontain">
+						<label for="datedue">Date Due:</label>
+						<input type="date" data-clear-btn="false" name="datedue" id="datedue" value="" />
+					</div>
+					
+					<div data-role="fieldcontain">
+						<label for "notes">Assignment Details:</label>
+						<textarea cols="40" rows="8" name="notes" id="notes" data-clear-btn="true"></textarea>
+					</div>
+					<div>
+						<label for="_id">Assignment Number</label>
+						<input type="range" name="_id" id="_id" value="40" min="0" max="100" data-mini="true" data-highlight="true" data-theme="b" data-track-theme="d">
+					</div>
+					<div>
+						<input type="submit" id="submit" value="Save My Assignment" data-inline="true" data-theme="b" />
+						<input type="reset" value="Reset" data-inline="true" data-mini="true" />
+					</div>
+				</form>
+				<div data-role="footer" data-position="fixed" data-id="home" data-theme="b">
+					<div data-role="navbar">
+						<ul>
+							<li><a href="#home" data-icon="home">Home</a></li>
+							<li><a href="#view" data-icon="plus">View</a></li>
+						</ul>
+					</div>	
+				</div>	
+			</section>
+		</div>
+		
+		<!--View Item Page-->
+		<div id="view" data-role="page" data-add-back-btn="true">
+			<div data-role="header" data-position="fixed">
+					<h1>Saved Assignments</h1>
+			</div>
+			<div data-role="content" class="ui-body">
+				<ul id="savedList" data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search assignments..."></ul>
+			</div>
+			<div>
+				<button id="deleteAll" data-mini="true" data-inline="true">Delete Assignment</button>
+			</div>
+			<div data-role="footer" data-position="fixed" data-id="home" data-theme="b">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#add" data-icon="plus">Add</a></li>
+					</ul>
+				</div>	
+			</div>	
+		</div>
+		
+		<!--JavaScript-->
+		<script type="text/javascript" src="main.js"></script>
+	</body>
+</html>
