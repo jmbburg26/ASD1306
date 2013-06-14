@@ -33,7 +33,6 @@ $('#view').on('pageinit', function(){
         displayData();
     });
 
-
 //Display data funciton
 var displayData = function(){
     $("#savedList").empty();
@@ -118,10 +117,9 @@ $('#loadJson').on('click', function(){
                 url      : "data.json",
                 type     : "GET",
                 dataType : "json",
-                success  : function(data, status) {
-                    storeData(data);
-                    console.log(status, data);
-                    displayData(data);
+                success  : function(json, status) {
+                    var jsonData = $.parseJSON(json);
+                    console.log(status, jsonData);
                     alert("Data has been added");
                 },
                 error   : function(error, parseerror) { 
@@ -138,11 +136,12 @@ $('#loadXml').on('click', function(){
         $.ajax({
                 url      : "data.xml",
                 type     : "GET",
-                dataType : "XML",
-                success  : function(data, status) {
-
-                    console.log(status, data);
-                    displayData(data);
+                dataType : "xml",
+                success  : function(xml, status) {
+                    xmlData = $.parseXML(xml);
+                    storeData(xmlData);
+                    console.log(status, xmlData);
+                    displayData(xmlData);
                     alert("Data has been added");
                 },
                 error   : function(error, parseerror) { 
