@@ -110,14 +110,14 @@ $('#deleteAll').on('click', function(){
     boomData();
 });
 
-/*
+
 //Function to add json data 
-$('#loadjson').on('click', function(){
+$('#loadJson').on('click', function(){
     if(localStorage.length === 0){
         $.ajax({
                 url      : "data.json",
                 type     : "GET",
-                dataType : "json",
+                dataType : "XML",
                 success  : function(data, status) {
                     console.log(status, data);
                     displayData(data);
@@ -129,7 +129,7 @@ $('#loadjson').on('click', function(){
         alert("Data has been added");
     }
 });
-*/
+
 
 /*
 localStorage.clear();
