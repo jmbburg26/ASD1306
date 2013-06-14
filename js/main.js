@@ -117,19 +117,41 @@ $('#loadJson').on('click', function(){
         $.ajax({
                 url      : "data.json",
                 type     : "GET",
-                dataType : "XML",
+                dataType : "json",
                 success  : function(data, status) {
+                    storeData(data);
                     console.log(status, data);
                     displayData(data);
+                    alert("Data has been added");
                 },
                 error   : function(error, parseerror) { 
                     console.log(error, parseerror);
+                    alert("Ah snap! Something went wrong.");
                 }
             });
-        alert("Data has been added");
     }
 });
 
+//Function to add XML data 
+$('#loadXml').on('click', function(){
+    if(localStorage.length === 0){
+        $.ajax({
+                url      : "data.xml",
+                type     : "GET",
+                dataType : "XML",
+                success  : function(data, status) {
+
+                    console.log(status, data);
+                    displayData(data);
+                    alert("Data has been added");
+                },
+                error   : function(error, parseerror) { 
+                    console.log(error, parseerror);
+                    alert("Ah snap! Something went wrong.");
+                }
+            });
+    }
+});
 
 /*
 localStorage.clear();
