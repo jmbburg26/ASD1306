@@ -38,6 +38,7 @@
 			<div data-role="footer" data-position="fixed" data-id="home" data-theme="b">
 					<div data-role="navbar">
 						<ul>
+							<li><a href="#home" data-icon="home">Home</a></li>
 							<li><a href="#add" data-icon="plus">Add</a></li>
 							<li><a href="#view" data-icon="info">View</a></li>
 						</ul>
@@ -98,7 +99,8 @@
 					<div data-role="navbar">
 						<ul>
 							<li><a href="#home" data-icon="home">Home</a></li>
-							<li><a href="#view" data-icon="plus">View</a></li>
+							<li><a href="#add" data-icon="plus">Add</a></li>
+							<li><a href="#view" data-icon="info">View</a></li>
 						</ul>
 					</div>	
 				</div>	
@@ -125,7 +127,26 @@
 				</div>	
 			</div>	
 		</div>
-		
+		<div id="viewitem" data-role="page" data-add-back-btn="true">
+			<div data-role="header" data-position="fixed">
+					<h1>Saved Assignments</h1>
+			</div>
+			<div data-role="content" class="ui-body">
+				<ul id="viewList" data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search assignments..."></ul>
+			</div>
+			<div>
+				<button id="deleteItem" data-mini="true" data-inline="true">Delete All Assignments</button>
+			</div>
+			<div data-role="footer" data-position="fixed" data-id="home" data-theme="b">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#add" data-icon="plus">Add</a></li>
+						<li><a href="#view" data-icon="info">View</a></li>
+					</ul>
+				</div>	
+			</div>	
+		</div>
 		<!--JavaScript-->
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
