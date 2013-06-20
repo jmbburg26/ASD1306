@@ -14,7 +14,7 @@ var storeData = function (){
         userData.datedue = $('#datedue').val();
         userData.notes = $('#notes').val();
 
-    $.couch.db("asd1305project").saveDoc(userData, {
+    $.couch.db("asd1306project").saveDoc(userData, {
     	success: function(){
     		alert("Homework Added!");
     	}
@@ -26,7 +26,7 @@ var storeData = function (){
 
 //Display data from CouchDB as a listview with links to individual pages
 $('#view').on('pageinit', function(){
-	$.couch.db("asd1305project").view("asd1305app/assignments", {
+	$.couch.db("asd1306project").view("asd1306app/assignments", {
 		success: function(data){
 			//console.log(data); //Logs out the entire DB
 			$('#savedList').empty();
@@ -54,7 +54,7 @@ $('#view').on('pageinit', function(){
 
 
 $(document).on('pageinit', '#assignments', function(){
-	$.couch.db("asd1305project").view("asd1305app/assignments", {
+	$.couch.db("asd1306project").view("asd1306app/assignments", {
 		success: function(data){
 			console.log(data); //Logs out the entire DB
 			$('#assignmentDetails').empty();
@@ -110,7 +110,7 @@ $('#deleteAll').on('click', function (key){
 
 //Destroy function to remove ALL items from the DB
 var clearAll = function(){
-	$.couch.db("asd1305project").removeDoc({
+	$.couch.db("asd1306project").removeDoc({
 		_id		:	id,
 		_rev 	:	rev
 		},{
