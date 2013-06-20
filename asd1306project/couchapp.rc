@@ -1,0 +1,10 @@
+{
+  "env": {
+    "local": {
+      "db": "http://127.0.0.1:5984/asd1306project"
+    },
+    "cloudant": {
+      "db": "https://hanoredrallefloornoichad:ODFHE8YtqmORWPmOixcDFEt2@jmbburg26.cloudant.com/asd1306project"
+    }
+  }
+}
