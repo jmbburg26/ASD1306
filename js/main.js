@@ -63,6 +63,38 @@ $('#view').on('pageinit', function(){
     $("#savedList").listview("refresh");
 });
 
+/*
+//Display data funciton
+var displayData = function(){
+    $("#savedList").empty();
+        for (var i= 0, j=localStorage.length; i<j ; i++){
+            var key = localStorage.key(i);
+            var item = JSON.parse(localStorage.getItem(key));
+            //console.log(item);
+            var makeSubList = $("<li></li>");
+            var makeSubLi = $( "<h3>" + "Assignment "+item._id+"</h3>"+
+                "<p>"+item.datedue+"</p>" +
+                "<p>"+item.fname+"</p>" +
+                "<p>"+item.lname+"</p>"+
+                "<p>"+item.email+"</p>" +
+                "<p>"+item.subject+"</p>" +
+                "<p>"+item.notes+"</p>");
+            var makeLink = $("<a id='"+key+"'>'Edit'</a>");
+            //console.log(item);
+            makeLink.on('click', function(){
+                    console.log(item);
+            });
+            makeLink.html(makeSubLi);
+            makeSubList.append(makeLink).appendTo("#savedList");
+            $("#savedList").listview("refresh");
+        };
+    };
+
+$('#view').on('pageinit', function(){
+    $("#savedList").listview("refresh");
+});
+*/
+
 //Function to edit assignment
 var editAssignment = function(){
 

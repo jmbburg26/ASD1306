@@ -104,7 +104,7 @@ $(document).on('pageinit', '#assignments', function(){
 /*
 
 //Destroy data from form in CouchDB function call
-$('#deleteAll').on('click', function (key){
+$('#delete').on('click', function (key){
     clearAll();
 });
 
